@@ -1,0 +1,58 @@
+[project]
+name = "xenocomm"
+version = "0.1.0"
+description = "Bayesian variational inference for cross-species cell-cell communication in xenograft data"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Benjamin Walker"},
+]
+keywords = [
+    "cell-communication",
+    "tensorflow-probability",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "anndata>=0.10.0",
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "platformdirs>=4.0.0",
+    "pyarrow>=14.0.0",
+    "rich>=13.0.0",
+    "scanpy>=1.9.0",
+    "scipy>=1.10.0",
+    "tf-keras>=2.15.0",
+    "tensorflow>=2.15.0",
+    "tensorflow-probability>=0.23.0",
+    "nvidia-cuda-nvcc-cu12>=12.5",
+]
+
+[project.optional-dependencies]
+gpu = [
+    "tensorflow[and-cuda]>=2.15.0",
+    "nvidia-cuda-nvcc-cu12>=12.5",
+]
+dev = [
+    "pylint",
+    "ipykernel",
+]
+
+[project.scripts]
+xenocomm = "xenocomm.__main__:main"
+
+[project.urls]
+Repository = "https://github.com/bwalker1/xenocomm"
+
+[build-system]
+requires = ["uv_build>=0.9.2,<0.10.0"]
+build-backend = "uv_build"
