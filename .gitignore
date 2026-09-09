@@ -7,3 +7,5 @@ dist/
 build/
 *.egg-info/
 .xenocomm/
+notebooks/data/
+notebooks/outputs/
